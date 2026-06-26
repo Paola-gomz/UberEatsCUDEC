@@ -10,10 +10,6 @@ document.addEventListener('DOMContentLoaded', function() {
   M.Sidenav.init(forms, {edge: 'left'});
 });
 
-btnAgregarPlatillo.addEventListener('click', function() {
-  alert('Platillo agregado');
-});
-
 function mostrarPlatillo(platillo, id) {
   contenido +=`
   <div class="card-panel recipe white row" id="${id}">

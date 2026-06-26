@@ -27,6 +27,7 @@
     <li><a class="subheader">DITS</a></li>
     <li><a href="/" class="waves-effect">Inicio</a></li>
     <li><a href="/pages/about.html" class="waves-effect">Acerca</a></li>
+    <li><a href="/pages/pedidos.html" class="waves-effect">Pedidos</a></li>
     <li><div class="divider"></div></li>
     <li><a href="/pages/contact.html" class="waves-effect">
       <i class="material-icons">mail_outline</i>Contacto</a>
@@ -58,7 +59,7 @@
         <label for="ingredients">Ingredientes</label>
       </div>
       <div class="input-field">
-        <input placeholder="costo" id="precio" type="text" class="validate">
+        <input placeholder="costo" id="precio" type="text" class="validate"> 
         <label for="precio">precio</int64>
       </div>
       <div class="input-field center">
@@ -73,19 +74,8 @@
 <script>
   
 
-  const firebaseConfig = {
-    apiKey: "AIzaSyDMelEh7GhF6JsOXh3pmJDuDphHULCfBpw",
-    authDomain: "ubereatspaola-d2791.firebaseapp.com",
-    projectId: "ubereatspaola-d2791",
-    storageBucket: "ubereatspaola-d2791.firebasestorage.app",
-    messagingSenderId: "914778196562",
-    appId: "1:914778196562:web:4012409e066c53ad226d8b"
-  };
-
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  const db = firebase.firestore();
 </script>
+  <script src="/js/firebase.js"></script>
   <script src="/js/index.js"></script>
   <script src="/js/db.js"></script>
 </body>
