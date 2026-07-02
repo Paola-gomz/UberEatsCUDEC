@@ -18,8 +18,8 @@ db.collection("platillos").onSnapshot((datos) => {
 });
 
 function agregarALista(platillo, id){
-    contenidoLista += `<option value=`${id}`>
-    ${platillo.nombre}
+    contenidoLista += `<option value='${id}'>
+    ${platillo.Nombre}
     </option>`;
     document.getElementById("listaPlatillos").innerHTML = contenidoLista;
 }
