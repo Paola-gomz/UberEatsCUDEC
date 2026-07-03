@@ -25,3 +25,38 @@ function agregarALista(platillo, id){
 }
 
 M.AutoInit();
+
+document.getElementById("btnUbicacion").addEventListener("click", function() {
+    if (navigator.geoLocation) {
+        navigator.geoLocation.getCurrentPosition(exito,error);
+    }
+});
+
+function exito(posicion) {
+    let latitud = posicion.coords.latitude;
+    let longitud = posicion.coords.longitude;
+    fetch(``)
+}
+    
+
+const formularioAgregar = document.querySelector("form");
+formularioAgregar.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const platilloNuevo = {
+        Nombre: formularioAgregar.title.value,
+        Ingredientes: formularioAgregar.ingredients.value,
+        precio: formularioAgregar.price.value
+    } 
+
+    db.collection("platillos").add(platilloNuevo)
+    .catch((error) => {
+        console.log(error);
+       alert("Platillo agregado");
+    }
+    );
+
+    formularioAgregar.title.value = "";
+    formularioAgregar.ingredients.value ="";
+    formularioAgregar.price.value ="";
+    alert("Pedido agregado");
+});
