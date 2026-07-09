@@ -35,7 +35,18 @@ document.getElementById("btnUbicacion").addEventListener("click", function() {
 function exito(posicion) {
     let latitud = posicion.coords.latitude;
     let longitud = posicion.coords.longitude;
-    fetch(``)
+    fetch(`https://nominatim.openstreetmap.org/reverse?lat=${latitud}&lon={longitud}&format=json`{
+        headers: {
+            'User-Agent': 'UberEatsPaola (paola.gomz.menchaca@gmail.com)'
+        }
+    })
+
+    .then(respuesta => respuesta.json())
+    .then(data => {
+        let ciudad = data.address.city;
+        let pais = data.addres.country;
+        document.getElementById("direccion").value = `${ciudad}, ${pais}`;
+    } )
 }
     
 
