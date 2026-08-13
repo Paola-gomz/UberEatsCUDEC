@@ -79,20 +79,26 @@ video.addEventListener("canplay", ()=>{
     }
 });
 
-btnTomarFoto.addEventListener("click", tomarFoto);
+btnTomarFoto.addEventListener("click", tomarFoto); {
+  event.preventDefault();
 
-function tomarFoto(){
-    const contexto = canvas.getContext("2d");
-    if (width && height) {
-        canvas.width = width;
-        canvas.height = height;
-        contexto.drawImage(video, 0, 0, width, height);
-        const fotoFinal = canvas.toDataURL("image/png"); // aquí generas la imagen
-        foto.setAttribute("src", fotoFinal);
-    } else {
-        limpiarFoto();
-    }
-}
+  if(!streaming){
+    return;
+  }
+  const contexto = canvas.getContext("2d");
+  if (width && height) {
+      canvas.width = width;
+      canvas.height = height;
+      contexto.drawImage(video, 0, 0, width, height);
+      const fotoFinal = canvas.toDataURL("image/png"); // aquí generas la imagen
+      foto.setAttribute("src", fotoFinal);
+  } else {
+      limpiarFoto();
+  }
+
+  }
+
+
 
 function limpiarFoto(){
     foto.src = "";
