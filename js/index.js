@@ -53,6 +53,8 @@ const foto = document.getElementById('foto');
 const btnFoto = document.getElementById('btnFoto');
 const btnTomarFoto = document.getElementById('tomarFoto');
 
+let streamActual = null;
+
 btnFoto.addEventListener("click", function(){
     navigator.mediaDevices
     .getUserMedia({
@@ -94,4 +96,15 @@ function tomarFoto(){
 
 function limpiarFoto(){
     foto.src = "";
+}
+
+function detenerCamara() {
+  if (streamActual) {
+    streamActual.getTracks().forEach(track => {
+      track.stop();
+    });
+    video.srcObject = null;
+    streamActual = null;
+    streaming = false;
+  }
 }
