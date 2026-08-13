@@ -51,52 +51,47 @@ const video = document.getElementById('video');
 const canvas = document.getElementById('canvas');
 const foto = document.getElementById('foto');
 const btnFoto = document.getElementById('btnFoto');
-const btnTomarFoto = documen.getElementById('tomarFoto');
+const btnTomarFoto = document.getElementById('tomarFoto');
 
-btnFoto.addEventListener("click" , function() {
-  navigator.mediaDevices
-  .getUserMedia({
-    video:{
-      facingMode: {
-        ideal: "environment"
-      }
-    },
-    audio: false
-  })
-  .then((stream) => {
-    video.srcObject = stream;
-    video.play();
-  })
-  .catch((error) => {
-    console.log(error);
-  });
-})
+btnFoto.addEventListener("click", function(){
+    navigator.mediaDevices
+    .getUserMedia({
+        video: { facingMode: "environment" },
+        audio: false
+    })
+    .then((stream)=> {
+        video.srcObject = stream; // aquí debe ser video, no VideoFrame
+        video.play();
+    })
+    .catch((error) => {
+        console.log(error);
+    });
+});
 
-video.addEventListener("canplay", () => {
-  if (!streaming) {
-    height = video.videoHeight / (video.videoWidth / width);
-    video.setAtrtribute("width", width);
-    streaming = true;
-  }
-})
+video.addEventListener("canplay", ()=>{
+    if (!streaming){
+        height = video.videoHeight / (video.videoWidth / width);
+        video.setAttribute("width", width);
+        video.setAttribute("height", height);
+        streaming = true; 
+    }
+});
 
 btnTomarFoto.addEventListener("click", tomarFoto);
 
-function tomarFoto() {
-  const contexto = canvas.getContext("2d");
-  if (width && height) {
-    canvas.width = width;
-    canvas.height = height;
-    contexto.drawImage(video,0,0, width, height);
-    const fotoFinal = canvas.toDataURL("image/png");
-    foto.setAttribute("src", fotoFinal);
-    document.getElementById("foto").value = fotoFinal;
-  }
-  else {
-    limpiarFoto();
-  }
+function tomarFoto(){
+    const contexto = canvas.getContext("2d");
+    if (width && height) {
+        canvas.width = width;
+        canvas.height = height;
+        contexto.drawImage(video, 0, 0, width, height);
+        const fotoFinal = canvas.toDataURL("image/png"); // aquí generas la imagen
+        foto.setAttribute("src", fotoFinal);
+    } else {
+        limpiarFoto();
+    }
 }
 
-function limpiarFoto() {
-  foto.src ="";
+function limpiarFoto(){
+    foto.src = "";
 }
