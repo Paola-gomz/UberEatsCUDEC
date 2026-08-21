@@ -1,11 +1,11 @@
-DITS — Aplicación de entrega de comida
+.DITS — Aplicación de entrega de comida
 Nombre del proyecto: Uber eats Cudec
 Tipo de aplicación: Progressive Web App (PWA)
 Descripción: DITS es una aplicación web progresiva de entrega de comida que permite consultar platillos, registrar pedidos y utilizar la ubicación del usuario para facilitar la entrega.
 Materia: Taller de programación avanzada
 Carrera: Ingeniería en Sistemas Computacionales
 Alumno: Gómez Menchaca Paola
-Caudillo Reyes JoseI van
+Caudillo Reyes Jose Ivan
 Ramírez Sánchez Fabian 
 Grupo: 09ISC181
 Institución: CUDEC
@@ -13,7 +13,8 @@ ________________________________________
 2. Descripción del proyecto
 DITS es una aplicación de entrega de comida inspirada en plataformas como Rappi y Uber Eats. Su propósito es proporcionar una plataforma sencilla para consultar platillos, registrar información de pedidos y utilizar la ubicación del usuario como referencia para la entrega.
 La aplicación está dirigida principalmente a usuarios que desean realizar pedidos de comida de manera rápida y sencilla, así como a quienes administran o registran los platillos disponibles.
-El proyecto está desarrollado como una Progressive Web App (PWA), por lo que puede funcionar como una aplicación web instalable en dispositivos compatibles.
+El proyecto está desarrollado como una Pro
+gressive Web App (PWA), por lo que puede funcionar como una aplicación web instalable en dispositivos compatibles.
 ________________________________________
 3. Objetivos
 Objetivo general
@@ -70,40 +71,37 @@ ________________________________________
 6. Estructura del proyecto
 La estructura principal del proyecto se organiza de la siguiente manera:
 UberEatsCUDEC/
-│
-├── index.html
-├── manifest.json
-│
-├── pages/
-│   ├── about.html
-│   └── contact.html
-│
-├── css/
-│   ├── materialize.min.css
-│   └── styles.css
-│
-├── js/
-│   ├── firebase.js
-│   ├── materialize.min.js
-│   ├── pedidos.js
-│   └── ui.js
-│
-├── img/
-│   └── icons/
-│       ├── icon-16x16.png
-│       ├── icon-32x32.png
-│       ├── icon-48x48.png
-│       ├── icon-64x64.png
-│       ├── icon-96x96.png
-│       ├── icon-128x128.png
-│       ├── icon-144x144.png
-│       ├── icon-152x152.png
-│       ├── icon-180x180.png
-│       ├── icon-192x192.png
-│       ├── icon-384x384.png
-│       └── icon-512x512.png
-│
-└── sw.js
+
+index.html
+manifest.json
+
+pages/
+about.html
+contact.html
+css/
+materialize.min.css
+styles.css
+js/
+firebase.js
+materialize.min.js
+pedidos.js
+ui.js
+
+img/
+icons/
+ icon-16x16.png
+icon-32x32.png
+icon-48x48.png
+icon-64x64.png
+icon-96x96.png
+icon-128x128.png
+icon-144x144.png
+icon-152x152.png
+icon-180x180.png
+icon-192x192.png
+icon-384x384.png
+icon-512x512.png
+sw.js
 Archivos principales
 index.html
 Página principal de la aplicación.
@@ -130,17 +128,16 @@ Inicio
   
 La pantalla de inicio presenta la interfaz principal de DITS y permite acceder a las diferentes funciones de la aplicación.
 Registrar platillo
-  
+  ![alt text](image.png)
 Esta pantalla permite ingresar la información de un nuevo platillo, como nombre, ingredientes y precio.
 Realizar pedido
- N/A
+ ![alt text](image-1.png)
 En esta sección el usuario puede seleccionar un platillo y proporcionar la información necesaria para realizar el pedido.
 Acerca
-  
+  ![alt text](image-2.png)
 La sección Acerca de DITS presenta información sobre el propósito de la aplicación y sus características.
 Contacto
-N / A 
- 
+![alt text](image-3.png)
 La sección Contacto contiene información para localizar o comunicarse con el servicio.
 Nota: Las rutas de las imágenes son ejemplos. Coloca las capturas reales dentro de img/evidencias/ y conserva los nombres utilizados anteriormente, o modifica las rutas según la organización de tu proyecto.
 ________________________________________
@@ -148,23 +145,20 @@ ________________________________________
 Motor utilizado
 La aplicación utiliza Firebase Firestore, una base de datos NoSQL alojada en la nube.
 Colecciones
-Actualmente se utiliza principalmente la colección:
-platillos
+
+Actualmente se utiliza  las colecciones:
+platillos y pedidos
+
 Cada documento de la colección almacena información relacionada con un platillo.
-Campos principales
-Campo	Descripción
-Nombre	Nombre del platillo
-Ingredientes	Ingredientes o descripción del platillo
-precio	Precio del platillo
-La aplicación utiliza listeners de Firestore mediante onSnapshot(), permitiendo detectar automáticamente cuando se agregan o modifican documentos y actualizar la interfaz.
+
+![alt text](image-4.png)
+La aplicación 
 ________________________________________
 9. Licencia
-Este proyecto fue desarrollado exclusivamente con fines académicos como parte de la carrera [Nombre de la carrera], para la materia [Nombre de la materia], del [Grupo], en [Nombre de la institución].
+Este proyecto fue desarrollado exclusivamente con fines académicos como parte de la carrera , para la materia.
 Licencia académica
 El proyecto se distribuye con fines exclusivamente educativos y académicos. No se autoriza su uso comercial, redistribución o modificación con fines comerciales sin autorización del autor.
-Autor: [Nombre del alumno]
-Año: 2026
-________________________________________
+______________________________________
 Información del proyecto
 Proyecto: DITS
 Tipo: Progressive Web App (PWA)
